@@ -1,3 +1,9 @@
+A fork of Joy187's mod RGB Chat.
+
+The upstream repo keeps version 0.1, so the fork is based on 0.1, which only has RGB text features. All the blocks and items are removed.
+
+Also, the modid is changed to 'rgbchat'.
+
 # RGB-Chat
 
 ## RGB Chat allows player to use gradient color text in chat、editing words.
@@ -14,7 +20,7 @@ example
 ```
 ![bluew.png](https://cdn.acwing.com/media/article/image/2022/11/15/39383_c7227b4c64-bluew.png) 
 #### 2.gradient color
-Input format(from color A to color B,then follows words)
+Input format (from color A to color B, then follows words)
 ```
 #ARGB-ARGByour text
 ```
