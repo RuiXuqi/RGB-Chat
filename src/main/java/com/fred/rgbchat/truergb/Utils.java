@@ -11,4 +11,3 @@ public class Utils {
         return TextFormatting.values()[index];
     }
 }
-

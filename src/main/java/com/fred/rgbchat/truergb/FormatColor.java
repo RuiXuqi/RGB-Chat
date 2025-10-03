@@ -78,4 +78,3 @@ public enum FormatColor implements IColor {
         return 0xFF000000 | this.getColorCode();
     }
 }
-
