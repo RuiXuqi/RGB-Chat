@@ -3,8 +3,7 @@ package com.fred.rgbchat.truergb;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.text.TextFormatting;
 
-public enum FormatColor implements IColor
-{
+public enum FormatColor implements IColor {
     BLACK(TextFormatting.BLACK),
     DARK_BLUE(TextFormatting.DARK_BLUE),
     DARK_GREEN(TextFormatting.DARK_GREEN),

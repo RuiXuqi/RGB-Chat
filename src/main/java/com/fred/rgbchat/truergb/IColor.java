@@ -1,4 +1,3 @@
-
 package com.fred.rgbchat.truergb;
 
 public interface IColor {

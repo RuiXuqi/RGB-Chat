@@ -15,8 +15,7 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class RGBSettings
-{
+public class RGBSettings {
     public static RGBSettings EMPTY;
     public static final Pattern PATTERN;
     private final List<IColor> colors;
@@ -53,8 +52,7 @@ public class RGBSettings
                 lastSettings = new RGBSettings(Arrays.stream(fString.split("-"))
                         .map(Colors::of)
                         .collect(Collectors.toList()));
-            }
-            else {
+            } else {
                 if (!format.startsWith("§")) {
                     throw new IllegalStateException("Format: " + format);
                 }
@@ -96,9 +94,8 @@ public class RGBSettings
         float percent;
         if (preIndex == postIndex) {
             percent = 0.0f;
-        }
-        else {
-            percent = Math.max(0.0f, Math.min(1.0f, (warpedIndex * (colorsLength - 1) - this.getLength() * preIndex) / ((postIndex - preIndex) * (float)this.getLength())));
+        } else {
+            percent = Math.max(0.0f, Math.min(1.0f, (warpedIndex * (colorsLength - 1) - this.getLength() * preIndex) / ((postIndex - preIndex) * (float) this.getLength())));
         }
         final IColor pre = this.colors.get(preIndex);
         final IColor post = this.colors.get(postIndex);
@@ -121,6 +118,10 @@ public class RGBSettings
             return RGBSettings.EMPTY;
         }
         throw new IllegalStateException(formatting.toString());
+    }
+
+    public List<IColor> getColors() {
+        return this.colors;
     }
 
     public boolean isFixedColor() {
@@ -156,26 +157,14 @@ public class RGBSettings
     }
 
     public Boolean getFormatState(final TextFormatting formatting) {
-        switch (formatting) {
-            case BOLD: {
-                return this.getBold();
-            }
-            case ITALIC: {
-                return this.getItalic();
-            }
-            case UNDERLINE: {
-                return this.getUnderlined();
-            }
-            case STRIKETHROUGH: {
-                return this.getStrikethrough();
-            }
-            case OBFUSCATED: {
-                return this.getObfuscated();
-            }
-            default: {
-                return null;
-            }
-        }
+        return switch (formatting) {
+            case BOLD -> this.getBold();
+            case ITALIC -> this.getItalic();
+            case UNDERLINE -> this.getUnderlined();
+            case STRIKETHROUGH -> this.getStrikethrough();
+            case OBFUSCATED -> this.getObfuscated();
+            default -> null;
+        };
     }
 
     public Boolean getBold() {
@@ -270,8 +259,7 @@ public class RGBSettings
         PATTERN = Pattern.compile("(#(?<rgb>([0-9a-fA-F]{6})(-([0-9a-fA-F]{6}))*)|§(?<format>[0-9a-fA-FklmnorKLMNOR]))");
     }
 
-    private static class WithFormat extends RGBSettings
-    {
+    private static class WithFormat extends RGBSettings {
         private final RGBSettings parent;
         private final int startIndex;
 
