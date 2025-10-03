@@ -25,4 +25,3 @@ public record SimpleColor(int alpha, int red, int green, int blue) implements IC
     }
 
 }
-

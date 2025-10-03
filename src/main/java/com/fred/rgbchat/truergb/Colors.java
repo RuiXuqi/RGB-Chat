@@ -19,4 +19,3 @@ public class Colors {
         return SimpleColor.of(s);
     }
 }
-

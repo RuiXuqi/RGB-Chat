@@ -13,4 +13,3 @@ public interface IColor {
         return this.red() << 16 | this.green() << 8 | this.blue();
     }
 }
-
